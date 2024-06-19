@@ -11,7 +11,7 @@ const Home = () => {
     api.get('/productos/')
       .then(response => {
         const products = response.data;
-        const latestThree = products.slice(0, 3);
+        const latestThree = products.slice(0, 4);
         setLatestProducts(latestThree);
       })
       .catch(error => {

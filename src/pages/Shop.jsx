@@ -5,10 +5,12 @@ import api from '../api';
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
-  const [butonFiltrado, setButonFiltrado] = useState("Todos");
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
+    // Fetch products from the API
     api.get('/productos/')
       .then(response => {
         console.log('Products:', response.data); 
@@ -17,10 +19,24 @@ const Shop = () => {
       .catch(error => {
         console.error('Error fetching products:', error);
       });
+
+    // Fetch categories from the API
+    api.get('/categorias/')
+      .then(response => {
+        console.log('Categories:', response.data);
+        setCategories([{ id: "Todos", nombre: "Todos" }, ...response.data]); // Añade "Todos" como una opción adicional
+      })
+      .catch(error => {
+        console.error('Error fetching categories:', error);
+      });
   }, []);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value); // Actualiza el estado del término de búsqueda
+  };
+
+  const handleCategoryClick = (categoryId) => {
+    setSelectedCategory(categoryId);
   };
 
   return (
@@ -45,50 +61,20 @@ const Shop = () => {
             </div>
           </div>
           <div className="d-flex flex-wrap justify-content-center my-4">
-            <button
-              className={`btn ${butonFiltrado === "Todos" ? 'btn-primary' : 'btn-outline-primary custom-btn-outline'} m-2`}
-              onClick={() => setButonFiltrado("Todos")}
-              style={{
-                backgroundColor: butonFiltrado === "Todos" ? '#f16179' : 'transparent',
-                borderColor: butonFiltrado === "Todos" ? '#f16179' : '#f16179',
-                color: butonFiltrado === "Todos" ? '#fff' : '#f16179'
-              }}
-            >
-              Todos
-            </button>
-            <button
-              className={`btn ${butonFiltrado === "Flores" ? 'btn-primary' : 'btn-outline-primary'} m-2`}
-              onClick={() => setButonFiltrado("Flores")}
-              style={{
-                backgroundColor: butonFiltrado === "Flores" ? '#f16179' : 'transparent',
-                borderColor: butonFiltrado === "Flores" ? '#f16179' : '#f16179',
-                color: butonFiltrado === "Flores" ? '#fff' : '#f16179'
-              }}
-            >
-              Flores
-            </button>
-            <button
-              className={`btn ${butonFiltrado === "Llaveros" ? 'btn-primary' : 'btn-outline-primary'} m-2`}
-              onClick={() => setButonFiltrado("Llaveros")}
-              style={{
-                backgroundColor: butonFiltrado === "Llaveros" ? '#f16179' : 'transparent',
-                borderColor: butonFiltrado === "Llaveros" ? '#f16179' : '#f16179',
-                color: butonFiltrado === "Llaveros" ? '#fff' : '#f16179'
-              }}
-            >
-              Llaveros
-            </button>
-            <button
-              className={`btn ${butonFiltrado === "Tazas" ? 'btn-primary' : 'btn-outline-primary'} m-2`}
-              onClick={() => setButonFiltrado("Tazas")}
-              style={{
-                backgroundColor: butonFiltrado === "Tazas" ? '#f16179' : 'transparent',
-                borderColor: butonFiltrado === "Tazas" ? '#f16179' : '#f16179',
-                color: butonFiltrado === "Tazas" ? '#fff' : '#f16179'
-              }}
-            >
-              Tazas
-            </button>
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                className={`btn ${selectedCategory === category.id ? 'btn-primary' : 'btn-outline-primary'} m-2`}
+                onClick={() => handleCategoryClick(category.id)}
+                style={{
+                  backgroundColor: selectedCategory === category.id ? '#f16179' : 'transparent',
+                  borderColor: selectedCategory === category.id ? '#f16179' : '#f16179',
+                  color: selectedCategory === category.id ? '#fff' : '#f16179'
+                }}
+              >
+                {category.nombre}
+              </button>
+            ))}
           </div>
         </div>
 
@@ -96,10 +82,8 @@ const Shop = () => {
           {products.length > 0 ? (
             products.map((product, index) => {
               if (
-                (butonFiltrado === "Todos" || (butonFiltrado === "Flores" && product.categoria === 1) || 
-                (butonFiltrado === "Llaveros" && product.categoria === 3) || 
-                (butonFiltrado === "Tazas" && product.categoria === 2)) &&
-                (product.nombre.toLowerCase().includes(searchTerm.toLowerCase()))
+                (selectedCategory === "Todos" || product.categoria === selectedCategory) &&
+                product.nombre.toLowerCase().includes(searchTerm.toLowerCase())
               ) {
                 return (
                   <ProductCard
