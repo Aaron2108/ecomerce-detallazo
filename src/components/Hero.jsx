@@ -15,9 +15,12 @@ const Hero = () => {
                 <div className="row">
                   <div className="col-md-7">
                     <div className="detail-box">
-                      <h1>Welcome To Our <br /> Gift Shop</h1>
-                      <p>Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.</p>
-                      <a href="">Contact Us</a>
+                      <h1>Bienvenido a 
+                      <br /> "Detallazo"</h1>
+                      <p>En Detallazo, estamos dedicados a hacer que cada ocasión sea especial con nuestros exclusivos regalos personalizados. Desde cumpleaños y bodas hasta aniversarios y eventos corporativos, tenemos algo único para cada celebración. ¡Descubre cómo podemos ayudarte a sorprender a tus seres queridos con un regalo que nunca olvidarán!
+                      </p>
+                      <a href="contact">Contáctanos
+                      </a>
                     </div>
                   </div>
                   <div className="col-md-5">
@@ -34,9 +37,11 @@ const Hero = () => {
                 <div className="row">
                   <div className="col-md-7">
                     <div className="detail-box">
-                      <h1>Discover Our <br /> Unique Gifts</h1>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
-                      <a href="">Shop Now</a>
+                      <h1>Descubre Nuestros 
+                      <br /> Regalos Únicos</h1>
+                      <p>En PersonalizaTuRegalo, nos enorgullece ofrecer una selección de regalos cuidadosamente elaborados que reflejan la singularidad de cada ocasión y persona. Explora nuestra colección de detalles especiales y encuentra el regalo perfecto que demuestre cuánto te importa.
+                      </p>
+                      <a href="shop">Comprar Ahora</a>
                     </div>
                   </div>
                   <div className="col-md-5">

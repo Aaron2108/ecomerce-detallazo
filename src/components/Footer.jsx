@@ -6,16 +6,16 @@ const Footer = () => {
     <section className="info_section layout_padding2-top">
       <div className="social_container">
         <div className="social_box">
-          <a href="#">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
             <i className="fa fa-facebook" aria-hidden="true"></i>
           </a>
-          <a href="#">
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
             <i className="fa fa-twitter" aria-hidden="true"></i>
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
             <i className="fa fa-instagram" aria-hidden="true"></i>
           </a>
-          <a href="#">
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
             <i className="fa fa-youtube" aria-hidden="true"></i>
           </a>
         </div>
@@ -24,40 +24,42 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-6 col-lg-3">
-              <h6>ABOUT US</h6>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-              </p>
+              <h6>SOBRE NOSOTROS</h6>
+              <p>En Detallazo, nos especializamos en crear regalos únicos y personalizados para cada ocasión especial.
+                Desde cumpleaños y bodas hasta aniversarios y eventos corporativos, cada detalle es cuidadosamente seleccionado
+                para reflejar la personalidad y el estilo de nuestros clientes. Nos apasiona transformar tus ideas en recuerdos
+                inolvidables que tus seres queridos apreciarán para siempre.</p>
             </div>
             <div className="col-md-6 col-lg-3">
               <div className="info_form">
-                <h5>Newsletter</h5>
+                <h6>BOLETÍN INFORMATIVO</h6>
                 <form action="#">
-                  <input type="email" placeholder="Enter your email" />
-                  <button type="submit">Subscribe</button>
+                  <input type="email" placeholder="Ingresa tu email" />
+                  <button type="submit">Suscríbete</button>
                 </form>
               </div>
             </div>
             <div className="col-md-6 col-lg-3">
-              <h6>NEED HELP</h6>
+              <h6>¿NECESITAS AYUDA?</h6>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-              </p>
+                Nuestro equipo está aquí para asistirte. Si tienes alguna pregunta sobre nuestros productos o necesitas ayuda con tu pedido,
+                no dudes en contactarnos. Estamos comprometidos en hacer que tu experiencia con nosotros sea tan personalizada y especial como
+                los regalos que ofrecemos.              </p>
             </div>
             <div className="col-md-6 col-lg-3">
-              <h6>CONTACT US</h6>
+              <h6>CONTÁCTANOS</h6>
               <div className="info_link-box">
                 <a href="#">
                   <i className="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>Gb road 123 london Uk</span>
+                  <span>Ca. Pedro Paulet 475</span>
                 </a>
                 <a href="#">
                   <i className="fa fa-phone" aria-hidden="true"></i>
-                  <span>+01 12345678901</span>
+                  <span>+51 902 362 856</span>
                 </a>
                 <a href="#">
                   <i className="fa fa-envelope" aria-hidden="true"></i>
-                  <span>demo@gmail.com</span>
+                  <span>detallazope@gmail.com</span>
                 </a>
               </div>
             </div>
@@ -67,8 +69,8 @@ const Footer = () => {
       <footer className="footer_section">
         <div className="container">
           <p>
-            &copy; <span id="displayYear"></span> All Rights Reserved By
-            <a href="https://html.design/">Free Html Templates</a>
+            &copy; <span id="displayYear"></span> Todos los derechos reservados por
+            <a href="https://html.design/"> @Detallazo</a>
           </p>
         </div>
       </footer>

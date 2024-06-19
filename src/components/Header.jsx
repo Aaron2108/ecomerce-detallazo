@@ -17,16 +17,16 @@ const Header = () => {
         <div className="collapse navbar-collapse innerpage_navbar" id="navbarSupportedContent">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link" to="/">Inicio</Link>
             </li>
             <li className="nav-item active">
-              <Link className="nav-link" to="/shop">Shop</Link>
+              <Link className="nav-link" to="/shop">Productos</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/why">Why Us</Link>
+              <Link className="nav-link" to="/why">NOSOTROS</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">Contact Us</Link>
+              <Link className="nav-link" to="/contact">Contáctanos</Link>
             </li>
           </ul>
           <div className="user_option">

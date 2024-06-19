@@ -22,7 +22,7 @@ const Shop = () => {
     <section className="shop_section layout_padding">
       <div className="container">
         <div className="heading_container heading_center">
-          <h2>Latest Products</h2>
+          <h2>ÚLTIMOS PRODUCTOS</h2>
         </div>
         <div className="row">
           {products.length > 0 ? (
@@ -35,11 +35,11 @@ const Shop = () => {
               />
             ))
           ) : (
-            <p>No products available</p>
+            <p>No hay productos disponibles</p>
           )}
         </div>
         <div className="btn-box">
-          <a href="">View All Products</a>
+          <a href="">Ver todos los productos</a>
         </div>
       </div>
     </section>

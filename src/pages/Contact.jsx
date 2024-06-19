@@ -9,7 +9,7 @@ const Contact = () => {
       <section className="contact_section layout_padding">
         <div className="container px-0">
           <div className="heading_container">
-            <h2>Contact Us</h2>
+            <h2>CONTÁCTANOS</h2>
           </div>
         </div>
         <div className="container container-bg">
@@ -32,19 +32,19 @@ const Contact = () => {
             <div className="col-md-6 col-lg-5 px-0">
               <form>
                 <div>
-                  <input type="text" placeholder="Name" />
+                  <input type="text" placeholder="Nombre" />
                 </div>
                 <div>
                   <input type="email" placeholder="Email" />
                 </div>
                 <div>
-                  <input type="text" placeholder="Phone" />
+                  <input type="text" placeholder="Teléfono" />
                 </div>
                 <div>
-                  <input type="text" className="message-box" placeholder="Message" />
+                  <input type="text" className="message-box" placeholder="Mensaje" />
                 </div>
                 <div className="d-flex">
-                  <button type="submit">SEND</button>
+                  <button type="submit">ENVIAR</button>
                 </div>
               </form>
             </div>

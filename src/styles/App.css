@@ -3,9 +3,9 @@
 
 /* Estilo para el logo */
 .logo-img {
-  width: 50px; /* Ajusta el ancho del logo */
+  width: 300px; /* Ajusta el ancho del logo */
   height: auto; /* Mantiene la proporción del logo */
-  margin-right: 10px; /* Añade un pequeño margen a la derecha si es necesario */
+  margin-right: 0px; /* Añade un pequeño margen a la derecha si es necesario */
 }
 
 :root {
