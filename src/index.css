@@ -1,3 +1,12 @@
+.custom-btn {
+    background-color: #f16179;
+    border-color: #f16179; /* Cambia el color del borde si es necesario */
+  }
+  
+  .custom-btn:hover {
+    background-color: #d14961;
+    border-color: #d14961;
+  }
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

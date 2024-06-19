@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Hero from '../components/Hero';
 import ProductCard from '../components/ProductCard';
-import '../styles/App.css'; // Asegúrate de que este archivo existe y contiene los estilos globales
-import api from '../api'; // Importa la instancia de axios configurada
+import '../styles/App.css'; 
+import api from '../api';
 
 const Home = () => {
   const [latestProducts, setLatestProducts] = useState([]);
 
   useEffect(() => {
-    // Fetch the latest products from the API
     api.get('/productos/')
       .then(response => {
-        // Assuming the response is an array of products sorted by date
         const products = response.data;
-        const latestThree = products.slice(0, 4); // Get the first 3 products
+        const latestThree = products.slice(0, 3);
         setLatestProducts(latestThree);
       })
       .catch(error => {
@@ -34,7 +32,7 @@ const Home = () => {
               latestProducts.map((product, index) => (
                 <ProductCard
                   key={index}
-                  image={product.imagen_url} // Asegúrate de que imagen_url esté en la respuesta
+                  image={product.imagen_url} 
                   title={product.nombre}
                   price={` S/.${product.precio}`}
                 />

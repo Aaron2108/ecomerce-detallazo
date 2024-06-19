@@ -31,15 +31,16 @@ const Header = () => {
           </ul>
           <div className="user_option">
             <Link to="/login">
-              <i className="fa fa-user" aria-hidden="true"></i>
+            <i className="fa fa-user" aria-hidden="true"></i>
             </Link>
             <Link to="/cart">
               <i className="fa fa-shopping-bag" aria-hidden="true"></i>
             </Link>
             <form className="form-inline">
+              <Link to="/shop">
               <button className="btn nav_search-btn" type="submit">
                 <i className="fa fa-search" aria-hidden="true"></i>
-              </button>
+              </button></Link>
             </form>
           </div>
         </div>
