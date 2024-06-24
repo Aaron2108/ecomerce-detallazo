@@ -14,7 +14,7 @@ const ModificarProducts = () => {
     api.get(url)
       .then(res => setProducts(res.data))
       .catch(error => console.error(error));
-  }, []);
+  }, [products]);
 
   const handleDelete = (id) => {
     const url = `http://127.0.0.1:8000/api/productos/${id}`;
