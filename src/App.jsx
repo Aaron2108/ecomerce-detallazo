@@ -8,7 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Login from './pages/Login';
 import Administrador from './pages/Administrador';
-
+import './styles/modal.css';
 
 function App() {
   return (
