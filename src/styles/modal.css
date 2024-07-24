@@ -10,6 +10,7 @@
     align-items: center;
     justify-content: center;
     z-index: 9999;
+  
   }
   
   /* Estilos del modal */
@@ -18,8 +19,8 @@
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
     max-width: 600px; /* Ancho máximo */
-    width: 90%;
-    height: auto;   
+    max-width: 100%;
+    max-height: 500px;   
   }
   
   .modal-header {
@@ -37,6 +38,7 @@
   
   .modal-body {
     padding: 20px;
+
   }
   
   .modal-footer {
@@ -61,4 +63,9 @@
     top: 15px;
     right: 15px;
   }
-  
+
+  .modal-content{
+    max-width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+  }
