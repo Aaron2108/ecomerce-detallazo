@@ -7,11 +7,18 @@ import ModificarProducts from "../components/ModificarProducts";
 
 const Administrador = () => {
   const [formularios, setFormularios] = useState(1);
+  const [createValidate, setCreateValidate] = useState(true);
   const navigate = useNavigate();
+
   const handleLogout = () => {
     localStorage.removeItem("userEmail"); 
     navigate("/Login"); 
   };
+
+  const closeValidate = ()  =>{
+    setCreateValidate(false);
+  }
+
   return (  
     <>
 
@@ -34,12 +41,30 @@ const Administrador = () => {
       </article>
 
       <article className="article_formularios">
-        {formularios === 1 ? <CategoriaForm/>: null}
-        {formularios === 2 ? <ProveedoresForm/> : null}
-        {formularios === 3 ? <ProductoForm /> : null}
-        {formularios === 4 ? <ModificarProducts /> : null}
+        {formularios === 1 ? <CategoriaForm setCreateValidate={setCreateValidate}/>: null}
+        {formularios === 2 ? <ProveedoresForm setCreateValidate={setCreateValidate}/> : null}
+        {formularios === 3 ? <ProductoForm setCreateValidate={setCreateValidate} /> : null}
+        {formularios === 4 ? <ModificarProducts  setCreateValidate={setCreateValidate}/> : null}
       </article>
-    </section></>
+    </section>
+    {
+                createValidate ? <div className="card"> 
+                <button className="dismiss" type="button" onClick={closeValidate}>×</button> 
+                <div className="header"> 
+                    <div className="image">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 7L9.00004 18L3.99994 13" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    </div> 
+                        <div className="content">
+                        <span className="title">Creado Exitosamente</span> 
+                        </div> 
+                        <div className="actions">
+                            </div> 
+                            </div> 
+                            </div>
+                            :
+                            <></>
+            }
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import api from "../api";
 import axios from "axios";
 import ModalEdit from "./ModalEdit";
 
-const ModificarProducts = () => {
+const ModificarProducts = ({setCreateValidate}) => {
   const [products, setProducts] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [currentProduct, setCurrentProduct] = useState(null);
@@ -39,7 +39,7 @@ const ModificarProducts = () => {
     console.log(editedProduct);
     axios.put(url, editedProduct)
       .then(res => {
-        console.log("Producto actualizado:", res.data);
+        setCreateValidate(true);
         setProducts(products.map(product => 
           product.id === editedProduct.id ? res.data : product
         ));

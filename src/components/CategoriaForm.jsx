@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 
-const CategoriaForm = () => {
+const CategoriaForm = ({setCreateValidate}) => {
   const { register, handleSubmit } = useForm();
 
   const submit = data =>{
     console.log(data);
     const url = "https://django-ecomerce-backend.onrender.com/api/categorias/"
     axios.post(url, data)
-    .then(res => console.log(res))
+    .then(res => setCreateValidate(true))
 	  .catch(error => console.log(error));
   }
 

@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 
-const ProveedoresForm = () => {
+const ProveedoresForm = ({setCreateValidate}) => {
     const { register, handleSubmit } = useForm();
     const submit = data =>{
         console.log(data);
         const url = "https://django-ecomerce-backend.onrender.com/api/proveedores/"
         axios.post(url, data)
-        .then(res => console.log(res))
+        .then(res => setCreateValidate(true))
           .catch(error => console.log(error));
       }
   return (

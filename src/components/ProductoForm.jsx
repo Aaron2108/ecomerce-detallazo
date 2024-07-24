@@ -3,15 +3,14 @@ import { useForm } from 'react-hook-form';
 import axios from "axios";
 import api from "../api";
 
-const ProductoForm = () => {
+const ProductoForm = ({setCreateValidate}) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [proveedores, setProveedores] = useState([]);
     const [categorias, setCategorias] = useState([]);
-
     const submit = (data) => {
         console.log(data);
         axios.post('https://django-ecomerce-backend.onrender.com/api/productos/', data)
-            .then(response => console.log(response.data))
+            .then(response => setCreateValidate(true))
             .catch(error => console.error(error));
     }
 
@@ -35,7 +34,7 @@ const ProductoForm = () => {
                             type="text"
                             className="form-control"
                             {...register("nombre", { required: "Este campo es requerido" })}
-                        />
+                            />
                         {errors.nombre && <p className="text-danger">{errors.nombre.message}</p>}
                     </div>
                     <div className="col-md-6 mb-3">
@@ -44,7 +43,7 @@ const ProductoForm = () => {
                             type="number"
                             className="form-control"
                             {...register("cantidad", { required: "Este campo es requerido", valueAsNumber: true })}
-                        />
+                            />
                         {errors.cantidad && <p className="text-danger">{errors.cantidad.message}</p>}
                     </div>
                 </div>
@@ -56,7 +55,7 @@ const ProductoForm = () => {
                             step="0.01"
                             className="form-control"
                             {...register("precio", { required: "Este campo es requerido", valueAsNumber: true })}
-                        />
+                            />
                         {errors.precio && <p className="text-danger">{errors.precio.message}</p>}
                     </div>
                     <div className="col-md-6 mb-3">
@@ -66,7 +65,7 @@ const ProductoForm = () => {
                             step="0.01"
                             className="form-control"
                             {...register("costo", { required: "Este campo es requerido", valueAsNumber: true })}
-                        />
+                            />
                         {errors.costo && <p className="text-danger">{errors.costo.message}</p>}
                     </div>
                 </div>
@@ -75,7 +74,7 @@ const ProductoForm = () => {
                     <select
                         className="form-control"
                         {...register("proveedor", { required: "Este campo es requerido" })}
-                    >
+                        >
                         <option value="">Seleccione un proveedor</option>
                         {proveedores.map(proveedor => (
                             <option key={proveedor.id} value={proveedor.id}>{proveedor.nombre}</option>
@@ -89,14 +88,14 @@ const ProductoForm = () => {
                         type="url"
                         className="form-control"
                         {...register("imagen_url")}
-                    />
+                        />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="categoria" className="form-label">Categoría:</label>
                     <select
                         className="form-control"
                         {...register("categoria")}
-                    >
+                        >
                         <option value="">Seleccione una categoría</option>
                         {categorias.map(categoria => (
                             <option key={categoria.id} value={categoria.id}>{categoria.nombre}</option>
