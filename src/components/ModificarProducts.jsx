@@ -10,14 +10,14 @@ const ModificarProducts = () => {
   const [idEdit, setIdEdit] = useState(0)
 
   useEffect(() => {
-    const url = "http://127.0.0.1:8000/api/productos/";
+    const url = "https://django-ecomerce-backend.onrender.com/api/productos/";
     api.get(url)
       .then(res => setProducts(res.data))
       .catch(error => console.error(error));
   }, [products]);
 
   const handleDelete = (id) => {
-    const url = `http://127.0.0.1:8000/api/productos/${id}`;
+    const url = `https://django-ecomerce-backend.onrender.com/api/productos/${id}`;
     axios.delete(url)
       .then(res => console.log(res))
       .catch(error => console.log(error));

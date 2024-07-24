@@ -10,7 +10,7 @@ const ProductoForm = () => {
 
     const submit = (data) => {
         console.log(data);
-        axios.post('http://127.0.0.1:8000/api/productos/', data)
+        axios.post('https://django-ecomerce-backend.onrender.com/api/productos/', data)
             .then(response => console.log(response.data))
             .catch(error => console.error(error));
     }

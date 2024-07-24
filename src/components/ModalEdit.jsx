@@ -8,14 +8,14 @@ const ModalEdit = ({ showModal, handleClose, product, handleSave }) => {
   const [categoria, setCategoria] = useState()
 
   useEffect(() => {
-  const urlProveedor = "http://127.0.0.1:8000/api/proveedores/"    
+  const urlProveedor = "https://django-ecomerce-backend.onrender.com/api/proveedores/"    
   axios.get(urlProveedor)
   .then(res => setProveedores(res.data))
   .catch(err => console.log(err))
   }, [])
 
   useEffect(() => {
-    const urlCategoria = "http://127.0.0.1:8000/api/categorias/"    
+    const urlCategoria = "https://django-ecomerce-backend.onrender.com/api/categorias/"    
     axios.get(urlCategoria)
     .then(res => setCategoria(res.data))
     .catch(err => console.log(err))

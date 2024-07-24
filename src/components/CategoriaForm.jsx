@@ -6,7 +6,7 @@ const CategoriaForm = () => {
 
   const submit = data =>{
     console.log(data);
-    const url = "http://127.0.0.1:8000/api/categorias/"
+    const url = "https://django-ecomerce-backend.onrender.com/api/categorias/"
     axios.post(url, data)
     .then(res => console.log(res))
 	  .catch(error => console.log(error));

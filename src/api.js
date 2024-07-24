@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://127.0.0.1:8000/api', // Cambia esto según la URL de tu API
+    baseURL: 'https://django-ecomerce-backend.onrender.com/api', // Cambia esto según la URL de tu API
     
 });
 

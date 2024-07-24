@@ -5,7 +5,7 @@ const ProveedoresForm = () => {
     const { register, handleSubmit } = useForm();
     const submit = data =>{
         console.log(data);
-        const url = "http://127.0.0.1:8000/api/proveedores/"
+        const url = "https://django-ecomerce-backend.onrender.com/api/proveedores/"
         axios.post(url, data)
         .then(res => console.log(res))
           .catch(error => console.log(error));
