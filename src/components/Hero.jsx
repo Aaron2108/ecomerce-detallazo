@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/App.css';
-import sliderImgImg from '../assets/slider-img.png'; // Asegúrate de que estas rutas son correctas
-import sliderImg2 from '../assets/slider-img2.png'; // Agrega más imágenes según sea necesario
+import sliderImgImg from '../assets/slider-img.png'; 
+import sliderImg2 from '../assets/slider-img2.png';
 
 const Hero = () => {
   return (
